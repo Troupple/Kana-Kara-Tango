@@ -1,0 +1,716 @@
+{
+  "chapter_1": {
+    "puzzles": [
+      {
+        "id": 1,
+        "groups": [
+          {
+            "label": "JOBS / しごと",
+            "color": "y",
+            "words": ["いしゃ", "せんせい", "かいしゃいん", "べんごし"]
+          },
+          {
+            "label": "TYPES OF STUDENT / がくせいのしゅるい",
+            "color": "g",
+            "words": ["がくせい", "こうこうせい", "だいがくせい", "りゅうがくせい"]
+          },
+          {
+            "label": "COUNTRIES / くに",
+            "color": "b",
+            "words": ["にほん", "アメリカ", "イギリス", "かんこく"]
+          },
+          {
+            "label": "THINGS WITH NUMBERS / かずがつくもの",
+            "color": "p",
+            "words": ["〜じ", "〜さい", "〜じん", "ばんごう"]
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "groups": [
+          {
+            "label": "PEOPLE AT UNIVERSITY / だいがくのひと",
+            "color": "y",
+            "words": ["せんせい", "がくせい", "りゅうがくせい", "だいがくいんせい"]
+          },
+          {
+            "label": "SCHOOL LEVELS / がっこうのしゅるい",
+            "color": "g",
+            "words": ["こうこう", "だいがく", "せんもん", "えいご"]
+          },
+          {
+            "label": "TIMES OF DAY / じかんのことば",
+            "color": "b",
+            "words": ["ごぜん", "ごご", "いま", "〜じ"]
+          },
+          {
+            "label": "YES / NO / FILLER / へんじのことば",
+            "color": "p",
+            "words": ["はい", "いいえ", "あの", "なん"]
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "groups": [
+          {
+            "label": "PERSONAL INFO WORDS / こじんじょうほう",
+            "color": "y",
+            "words": ["なまえ", "〜さい", "ばんごう", "でんわ"]
+          },
+          {
+            "label": "COUNTRIES (ASIA) / アジアのくに",
+            "color": "g",
+            "words": ["にほん", "かんこく", "ちゅうごく", "アメリカ"]
+          },
+          {
+            "label": "WAYS TO DESCRIBE A PERSON / ひとのことば",
+            "color": "b",
+            "words": ["わたし", "〜じん", "〜さい", "しごと"]
+          },
+          {
+            "label": "THINGS AT SCHOOL / がっこうのもの",
+            "color": "p",
+            "words": ["だいがく", "せんもん", "えいご", "せんせい"]
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "groups": [
+          {
+            "label": "JOBS: PROFESSIONAL / せんもんしょく",
+            "color": "y",
+            "words": ["いしゃ", "べんごし", "せんせい", "かいしゃいん"]
+          },
+          {
+            "label": "PEOPLE WORDS / ひとをあらわすことば",
+            "color": "g",
+            "words": ["わたし", "ともだち", "しゅふ", "りゅうがくせい"]
+          },
+          {
+            "label": "COUNTERS / かぞえることば",
+            "color": "b",
+            "words": ["〜じ", "〜さい", "〜じん", "〜ねん"]
+          },
+          {
+            "label": "COUNTRY → NATIONALITY / くに→じん",
+            "color": "p",
+            "words": ["にほんじん", "アメリカじん", "ちゅうごくじん", "かんこくじん"]
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "groups": [
+          {
+            "label": "SCHOOL SUBJECTS / がくもん",
+            "color": "y",
+            "words": ["えいご", "せんもん", "だいがく", "こうこう"]
+          },
+          {
+            "label": "CONTACT INFO / れんらくさき",
+            "color": "g",
+            "words": ["でんわ", "ばんごう", "なまえ", "ともだち"]
+          },
+          {
+            "label": "AM vs PM WORDS / ごぜんごごのことば",
+            "color": "b",
+            "words": ["ごぜん", "ごご", "〜じ", "いま"]
+          },
+          {
+            "label": "NON-JAPANESE COUNTRIES / にほん以外のくに",
+            "color": "p",
+            "words": ["アメリカ", "イギリス", "かんこく", "ちゅうごく"]
+          }
+        ]
+      },
+      {
+        "id": 6,
+        "groups": [
+          {
+            "label": "WORDS THAT END IN せい / 〜せいのことば",
+            "color": "y",
+            "words": ["がくせい", "こうこうせい", "だいがくせい", "だいがくいんせい"]
+          },
+          {
+            "label": "WORDS MEANING 'SCHOOL' / がっこうのことば",
+            "color": "g",
+            "words": ["こうこう", "だいがく", "りゅうがくせい", "せんせい"]
+          },
+          {
+            "label": "USEFUL LITTLE WORDS / べんりなことば",
+            "color": "b",
+            "words": ["はい", "いいえ", "あの", "いま"]
+          },
+          {
+            "label": "WHAT IS YOUR ~? / なんですか",
+            "color": "p",
+            "words": ["なまえ", "せんもん", "しごと", "〜さい"]
+          }
+        ]
+      },
+      {
+        "id": 7,
+        "groups": [
+          {
+            "label": "JOBS NOT AT A SCHOOL / がっこう以外のしごと",
+            "color": "y",
+            "words": ["いしゃ", "べんごし", "かいしゃいん", "しゅふ"]
+          },
+          {
+            "label": "WORDS WITH だいがく / だいがくのことば",
+            "color": "g",
+            "words": ["だいがく", "だいがくせい", "だいがくいんせい", "りゅうがくせい"]
+          },
+          {
+            "label": "THINGS YOU CAN PHONE / でんわするもの",
+            "color": "b",
+            "words": ["でんわ", "ばんごう", "ともだち", "せんせい"]
+          },
+          {
+            "label": "WORDS YOU USE TO INTRODUCE YOURSELF / じこしょうかい",
+            "color": "p",
+            "words": ["わたし", "なまえ", "〜さい", "せんもん"]
+          }
+        ]
+      },
+      {
+        "id": 8,
+        "groups": [
+          {
+            "label": "COUNTRIES THAT END IN く / くがつくくに",
+            "color": "y",
+            "words": ["にほん", "かんこく", "ちゅうごく", "アメリカ"]
+          },
+          {
+            "label": "PEOPLE WHO STUDY / べんきょうするひと",
+            "color": "g",
+            "words": ["がくせい", "だいがくせい", "だいがくいんせい", "りゅうがくせい"]
+          },
+          {
+            "label": "NUMBERS / TIME COUNTERS / かずとじかん",
+            "color": "b",
+            "words": ["〜じ", "〜さい", "ごぜん", "ごご"]
+          },
+          {
+            "label": "SOFT FILLER WORDS / つなぎのことば",
+            "color": "p",
+            "words": ["あの", "はい", "いいえ", "いま"]
+          }
+        ]
+      }
+    ]
+  },
+
+  "chapter_2": {
+    "puzzles": [
+      {
+        "id": 9,
+        "groups": [
+          {
+            "label": "THINGS YOU CARRY / もちものにするもの",
+            "color": "y",
+            "words": ["かばん", "さいふ", "かさ", "とけい"]
+          },
+          {
+            "label": "THINGS YOU READ / よむもの",
+            "color": "g",
+            "words": ["ほん", "しんぶん", "じしょ", "ノート"]
+          },
+          {
+            "label": "FOOD AT A RESTAURANT / レストランのたべもの",
+            "color": "b",
+            "words": ["さかな", "にく", "やさい", "とんかつ"]
+          },
+          {
+            "label": "PLACES IN TOWN / まちのばしょ",
+            "color": "p",
+            "words": ["ぎんこう", "としょかん", "ゆうびんきょく", "おてあらい"]
+          }
+        ]
+      },
+      {
+        "id": 10,
+        "groups": [
+          {
+            "label": "THINGS YOU WEAR / きるもの",
+            "color": "y",
+            "words": ["くつ", "ジーンズ", "トレーナー", "ぼうし"]
+          },
+          {
+            "label": "POINTING WORDS: OBJECTS / ものをさすことば",
+            "color": "g",
+            "words": ["これ", "それ", "あれ", "どれ"]
+          },
+          {
+            "label": "WRITING TOOLS / かくどうぐ",
+            "color": "b",
+            "words": ["えんぴつ", "ペン", "ノート", "じしょ"]
+          },
+          {
+            "label": "SHOPPING WORDS / かいものことば",
+            "color": "p",
+            "words": ["いくら", "えん", "たかい", "メニュー"]
+          }
+        ]
+      },
+      {
+        "id": 11,
+        "groups": [
+          {
+            "label": "POINTING WORDS: LOCATION / ばしょをさすことば",
+            "color": "y",
+            "words": ["ここ", "そこ", "あそこ", "どこ"]
+          },
+          {
+            "label": "UNIVERSITY MAJORS / だいがくのせんこう",
+            "color": "g",
+            "words": ["けいざい", "れきし", "ビジネス", "コンピューター"]
+          },
+          {
+            "label": "POLITE SHOP PHRASES / おみせのことば",
+            "color": "b",
+            "words": ["いらっしゃいませ", "〜をください", "どうも", "どうぞ"]
+          },
+          {
+            "label": "QUESTION WORDS (CH.2) / しつもんのことば",
+            "color": "p",
+            "words": ["どこ", "だれ", "どれ", "いくら"]
+          }
+        ]
+      },
+      {
+        "id": 12,
+        "groups": [
+          {
+            "label": "THINGS ON A DESK / つくえのうえのもの",
+            "color": "y",
+            "words": ["ほん", "えんぴつ", "ノート", "ペン"]
+          },
+          {
+            "label": "PLACES TO GO IN TOWN / まちのばしょ",
+            "color": "g",
+            "words": ["きっさてん", "ぎんこう", "としょかん", "ゆうびんきょく"]
+          },
+          {
+            "label": "THINGS YOU WEAR ON YOUR HEAD OR FEET / あたまとあしにつけるもの",
+            "color": "b",
+            "words": ["ぼうし", "くつ", "トレーナー", "ジーンズ"]
+          },
+          {
+            "label": "POINTING WORDS: MODIFIERS / このそのあのどの",
+            "color": "p",
+            "words": ["この", "その", "あの", "どの"]
+          }
+        ]
+      },
+      {
+        "id": 13,
+        "groups": [
+          {
+            "label": "THINGS IN A BAG / かばんのなか",
+            "color": "y",
+            "words": ["じしょ", "ノート", "えんぴつ", "さいふ"]
+          },
+          {
+            "label": "THINGS AT A CAFÉ / カフェのもの",
+            "color": "g",
+            "words": ["メニュー", "きっさてん", "おいしい", "どうぞ"]
+          },
+          {
+            "label": "FOOD WORDS (CH.2) / たべものことば",
+            "color": "b",
+            "words": ["さかな", "とんかつ", "にく", "やさい"]
+          },
+          {
+            "label": "MONEY WORDS / おかねのことば",
+            "color": "p",
+            "words": ["いくら", "えん", "たかい", "〜をください"]
+          }
+        ]
+      },
+      {
+        "id": 14,
+        "groups": [
+          {
+            "label": "THINGS YOU FIND OUTSIDE / そとにあるもの",
+            "color": "y",
+            "words": ["かさ", "じてんしゃ", "ぎんこう", "ゆうびんきょく"]
+          },
+          {
+            "label": "CLOTHES / ふく",
+            "color": "g",
+            "words": ["ジーンズ", "トレーナー", "ぼうし", "くつ"]
+          },
+          {
+            "label": "THINGS THAT TELL YOU SOMETHING / しらせてくれるもの",
+            "color": "b",
+            "words": ["しんぶん", "じしょ", "ほん", "メニュー"]
+          },
+          {
+            "label": "USEFUL EXPRESSIONS (CH.2) / べんりなひょうげん",
+            "color": "p",
+            "words": ["どうも", "どうぞ", "いらっしゃいませ", "〜をください"]
+          }
+        ]
+      },
+      {
+        "id": 15,
+        "groups": [
+          {
+            "label": "THINGS WITH HANDS / てでつかうもの",
+            "color": "y",
+            "words": ["かばん", "かさ", "ペン", "とけい"]
+          },
+          {
+            "label": "THINGS WITH A PRICE / ねだんがあるもの",
+            "color": "g",
+            "words": ["ほん", "じてんしゃ", "ぼうし", "くつ"]
+          },
+          {
+            "label": "PLACE WORDS / ばしょのことば",
+            "color": "b",
+            "words": ["おてあらい", "きっさてん", "としょかん", "ゆうびんきょく"]
+          },
+          {
+            "label": "ADJECTIVE + FOOD / けいようしとたべもの",
+            "color": "p",
+            "words": ["おいしい", "たかい", "やさい", "とんかつ"]
+          }
+        ]
+      },
+      {
+        "id": 16,
+        "groups": [
+          {
+            "label": "THINGS THAT GO ON YOUR BODY / からだにつけるもの",
+            "color": "y",
+            "words": ["くつ", "ぼうし", "とけい", "ジーンズ"]
+          },
+          {
+            "label": "THINGS TO READ OR WRITE WITH / よむかくもの",
+            "color": "g",
+            "words": ["えんぴつ", "ペン", "ほん", "しんぶん"]
+          },
+          {
+            "label": "QUESTION WORDS: WHICH ONE? / どれどこだれ",
+            "color": "b",
+            "words": ["どれ", "どこ", "だれ", "どの"]
+          },
+          {
+            "label": "UNIVERSITY SUBJECTS / だいがくのかもく",
+            "color": "p",
+            "words": ["けいざい", "れきし", "ビジネス", "コンピューター"]
+          }
+        ]
+      },
+      {
+        "id": 17,
+        "groups": [
+          {
+            "label": "OBJECTS YOU OPEN / あけるもの",
+            "color": "y",
+            "words": ["かさ", "じしょ", "さいふ", "かばん"]
+          },
+          {
+            "label": "THINGS AT A RESTAURANT / レストランのもの",
+            "color": "g",
+            "words": ["メニュー", "とんかつ", "さかな", "おいしい"]
+          },
+          {
+            "label": "DISTANCE WORDS (FAR → NEAR) / きょりのことば",
+            "color": "b",
+            "words": ["これ", "それ", "あれ", "あそこ"]
+          },
+          {
+            "label": "ACADEMIC SUBJECTS / せんこうのことば",
+            "color": "p",
+            "words": ["れきし", "けいざい", "コンピューター", "ビジネス"]
+          }
+        ]
+      }
+    ]
+  },
+
+  "chapter_3": {
+    "puzzles": [
+      {
+        "id": 18,
+        "groups": [
+          {
+            "label": "MEALS / しょくじ",
+            "color": "y",
+            "words": ["あさごはん", "ひるごはん", "ばんごはん", "ハンバーガー"]
+          },
+          {
+            "label": "DRINKS / のみもの",
+            "color": "g",
+            "words": ["おちゃ", "コーヒー", "おさけ", "みず"]
+          },
+          {
+            "label": "HOBBIES & ENTERTAINMENT / たのしみ",
+            "color": "b",
+            "words": ["えいが", "おんがく", "テレビ", "スポーツ"]
+          },
+          {
+            "label": "WEEKEND WORDS / しゅうまつのことば",
+            "color": "p",
+            "words": ["どようび", "にちようび", "しゅうまつ", "デート"]
+          }
+        ]
+      },
+      {
+        "id": 19,
+        "groups": [
+          {
+            "label": "THINGS TO READ OR WATCH / みるよむもの",
+            "color": "y",
+            "words": ["ざっし", "テレビ", "ビデオ", "えいが"]
+          },
+          {
+            "label": "RU-VERBS / るーどうし",
+            "color": "g",
+            "words": ["おきる", "たべる", "ねる", "みる"]
+          },
+          {
+            "label": "U-VERBS / うーどうし",
+            "color": "b",
+            "words": ["いく", "のむ", "よむ", "かえる"]
+          },
+          {
+            "label": "FREQUENCY ADVERBS / ひんどのことば",
+            "color": "p",
+            "words": ["たいてい", "ときどき", "よく", "まいにち"]
+          }
+        ]
+      },
+      {
+        "id": 20,
+        "groups": [
+          {
+            "label": "TIME WORDS: WHEN / いつのことば",
+            "color": "y",
+            "words": ["あさ", "こんばん", "あした", "きょう"]
+          },
+          {
+            "label": "PLACES (CH.3) / ばしょ",
+            "color": "g",
+            "words": ["がっこう", "いえ", "うち", "きっさてん"]
+          },
+          {
+            "label": "DEGREE / NEGATION ADVERBS / ていどのことば",
+            "color": "b",
+            "words": ["あまり", "ぜんぜん", "ちょっと", "よく"]
+          },
+          {
+            "label": "CONVERSATION EXPRESSIONS / かいわのことば",
+            "color": "p",
+            "words": ["そうですね", "でも", "どうですか", "ちょっと"]
+          }
+        ]
+      },
+      {
+        "id": 21,
+        "groups": [
+          {
+            "label": "SPORTS & LEISURE / スポーツとレジャー",
+            "color": "y",
+            "words": ["テニス", "スポーツ", "えいが", "おんがく"]
+          },
+          {
+            "label": "IRREGULAR VERBS / ふきそくどうし",
+            "color": "g",
+            "words": ["くる", "する", "べんきょうする", "いく"]
+          },
+          {
+            "label": "ADJECTIVES (CH.3) / けいようし",
+            "color": "b",
+            "words": ["いい", "はやい", "おいしい", "たかい"]
+          },
+          {
+            "label": "THINGS YOU DO ON A DATE / デートですること",
+            "color": "p",
+            "words": ["えいが", "テニス", "コーヒー", "デート"]
+          }
+        ]
+      },
+      {
+        "id": 22,
+        "groups": [
+          {
+            "label": "THINGS YOU EAT / たべるもの",
+            "color": "y",
+            "words": ["ハンバーガー", "あさごはん", "ひるごはん", "ばんごはん"]
+          },
+          {
+            "label": "THINGS YOU DRINK / のむもの",
+            "color": "g",
+            "words": ["みず", "おちゃ", "コーヒー", "おさけ"]
+          },
+          {
+            "label": "VERBS: GOING & COMING / いくくる",
+            "color": "b",
+            "words": ["いく", "くる", "かえる", "いえ"]
+          },
+          {
+            "label": "EVERY DAY WORDS / まいにちのことば",
+            "color": "p",
+            "words": ["まいにち", "まいばん", "たいてい", "ときどき"]
+          }
+        ]
+      },
+      {
+        "id": 23,
+        "groups": [
+          {
+            "label": "THINGS YOU LISTEN TO OR WATCH / きくみるもの",
+            "color": "y",
+            "words": ["おんがく", "テレビ", "ビデオ", "ざっし"]
+          },
+          {
+            "label": "VERBS: USING YOUR SENSES / かんかくどうし",
+            "color": "g",
+            "words": ["みる", "きく", "よむ", "はなす"]
+          },
+          {
+            "label": "TIME: RELATIVE DAYS / あいたいてきなひ",
+            "color": "b",
+            "words": ["きょう", "あした", "まいにち", "しゅうまつ"]
+          },
+          {
+            "label": "DEGREE WORDS: NOT VERY / あまりぜんぜん",
+            "color": "p",
+            "words": ["あまり", "ぜんぜん", "ちょっと", "まあまあ"]
+          }
+        ]
+      },
+      {
+        "id": 24,
+        "groups": [
+          {
+            "label": "FOOD & DRINK AT HOME / うちのたべのみもの",
+            "color": "y",
+            "words": ["みず", "おちゃ", "あさごはん", "ばんごはん"]
+          },
+          {
+            "label": "PLACES YOU GO / いくばしょ",
+            "color": "g",
+            "words": ["がっこう", "いえ", "うち", "きっさてん"]
+          },
+          {
+            "label": "VERBS: STUDYING / べんきょうのどうし",
+            "color": "b",
+            "words": ["よむ", "はなす", "きく", "べんきょうする"]
+          },
+          {
+            "label": "ADJECTIVE WORDS / ようすことば",
+            "color": "p",
+            "words": ["いい", "はやい", "たかい", "おいしい"]
+          }
+        ]
+      },
+      {
+        "id": 25,
+        "groups": [
+          {
+            "label": "MORNING WORDS / あさのことば",
+            "color": "y",
+            "words": ["あさ", "あさごはん", "おきる", "はやい"]
+          },
+          {
+            "label": "NIGHT WORDS / よるのことば",
+            "color": "g",
+            "words": ["こんばん", "まいばん", "ばんごはん", "ねる"]
+          },
+          {
+            "label": "DAILY ROUTINE VERBS / まいにちのどうし",
+            "color": "b",
+            "words": ["おきる", "たべる", "ねる", "かえる"]
+          },
+          {
+            "label": "ENTERTAINMENT NOUNS / エンタメのめいし",
+            "color": "p",
+            "words": ["えいが", "おんがく", "テレビ", "ビデオ"]
+          }
+        ]
+      },
+      {
+        "id": 26,
+        "groups": [
+          {
+            "label": "THINGS YOU DO AT SCHOOL / がっこうですること",
+            "color": "y",
+            "words": ["べんきょうする", "はなす", "よむ", "きく"]
+          },
+          {
+            "label": "WHEN WORDS: FUTURE / みらいのじかん",
+            "color": "g",
+            "words": ["あした", "こんばん", "しゅうまつ", "〜ごろ"]
+          },
+          {
+            "label": "VERBS: CONSUMING / のんだりたべたりする",
+            "color": "b",
+            "words": ["たべる", "のむ", "おきる", "ねる"]
+          },
+          {
+            "label": "WORDS ABOUT HOME / いえのことば",
+            "color": "p",
+            "words": ["いえ", "うち", "かえる", "まいにち"]
+          }
+        ]
+      },
+      {
+        "id": 27,
+        "groups": [
+          {
+            "label": "SPORTS NOUNS / スポーツのめいし",
+            "color": "y",
+            "words": ["テニス", "スポーツ", "ビデオ", "デート"]
+          },
+          {
+            "label": "U-VERBS: COMMUNICATION / はなすきくどうし",
+            "color": "g",
+            "words": ["はなす", "きく", "よむ", "いく"]
+          },
+          {
+            "label": "ADVERBS OF FREQUENCY / ひんどのふくし",
+            "color": "b",
+            "words": ["よく", "ときどき", "たいてい", "まいばん"]
+          },
+          {
+            "label": "TODAY / TONIGHT / TOMORROW / きょうこんばんあした",
+            "color": "p",
+            "words": ["きょう", "こんばん", "あした", "いつ"]
+          }
+        ]
+      },
+      {
+        "id": 28,
+        "groups": [
+          {
+            "label": "THINGS IN A CAFÉ / カフェにあるもの",
+            "color": "y",
+            "words": ["コーヒー", "おちゃ", "ざっし", "テレビ"]
+          },
+          {
+            "label": "VERBS THAT USE YOUR EYES / めをつかうどうし",
+            "color": "g",
+            "words": ["みる", "よむ", "いく", "かえる"]
+          },
+          {
+            "label": "TIME: REPEATING PATTERNS / くりかえすじかん",
+            "color": "b",
+            "words": ["まいにち", "まいばん", "ときどき", "たいてい"]
+          },
+          {
+            "label": "THINGS YOU DO ON WEEKENDS / しゅうまつにすること",
+            "color": "p",
+            "words": ["デート", "えいが", "テニス", "おんがく"]
+          }
+        ]
+      }
+    ]
+  }
+}

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kana Yori tango</title>
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:wght@400;700&family=Noto+Sans+JP:wght@900&display=swap');
+
+:root {
+  --paper: #f6e3e5;
+  --ink: #213f95;
+  --accent: #d5eaff;
+  --white: #ffffff;
+  --yellow: #ffbc00;
+  --green: #00ff88;
+  --red: #ff006e;
+  --border: 4px solid var(--ink);
+  --shadow: 6px 6px 0 var(--ink);
+  --shadow-lg: 10px 10px 0 var(--ink);
+  --easy: #c8c8c8;
+  --medium: #a6d388;
+  --hard: #ffd983;
+  --max-hard: #fcb1e3;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  background-color: var(--paper);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cg fill-rule='evenodd'%3E%3Cg fill='%23213f95' fill-opacity='0.15'%3E%3Cpath d='M0 38.59l2.83-2.83 1.41 1.41L1.41 40H0v-1.41zM0 1.4l2.83 2.83 1.41-1.41L1.41 0H0v1.41zM38.59 40l-2.83-2.83 1.41-1.41L40 38.59V40h-1.41zM40 1.41l-2.83 2.83-1.41-1.41L38.59 0H40v1.41zM20 18.6l2.83-2.83 1.41 1.41L21.41 20l2.83 2.83-1.41 1.41L20 21.41l-2.83 2.83-1.41-1.41L18.59 20l-2.83-2.83 1.41-1.41L20 18.59z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+  font-family: 'Space Mono', monospace;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+  animation: bg-move 1s linear infinite;
+}
+
+@keyframes bg-move {
+  0%   { background-position: 0 0; }
+  100% { background-position: 20px 20px; }
+}
+
+.header {
+  width: min(700px, 95vw);
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+}
+
+.header-bar {
+  background: var(--accent);
+  border-bottom: var(--border);
+  padding: 10px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.stoplight { display: flex; gap: 10px; }
+.dot {
+  width: 14px; height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--ink);
+}
+.dot.r { background: var(--red); }
+.dot.y { background: var(--yellow); }
+.dot.g { background: var(--green); }
+
+.win-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 13px;
+  letter-spacing: 3px;
+  color: var(--ink);
+}
+
+.game-title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  min-height: 140px;
+  margin-bottom: 8px;
+}
+
+.game-title img {
+  max-width: 90%;
+  max-height: 140px;
+  width: auto;
+  height: auto;
+}
+
+.subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--ink);
+  text-transform: uppercase;
+  margin-top: 0px;
+}
+
+.game-card {
+  width: min(700px, 95vw);
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+}
+
+.solved-rows {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.solved-row {
+  padding: 18px 24px;
+  border-bottom: var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  animation: solveIn .4s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes solveIn {
+  from { transform: scaleY(0); opacity: 0; }
+  to   { transform: scaleY(1); opacity: 1; }
+}
+
+.solved-row.y { background: var(--yellow); }
+.solved-row.g { background: var(--green); }
+.solved-row.b { background: var(--accent); }
+.solved-row.p { background: #e8d5ff; }
+
+.solved-label {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 18px;
+  letter-spacing: 3px;
+  color: var(--ink);
+}
+
+.solved-words {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.grid-area {
+  padding: 24px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.tile {
+  aspect-ratio: 1.4 / 1;
+  background: var(--accent);
+  border: var(--border);
+  box-shadow: 4px 4px 0 var(--ink);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: transform .12s ease, box-shadow .12s ease, background .12s ease;
+  font-family: 'Bebas Neue', 'Noto Sans JP', sans-serif;
+  font-size: 20px;
+  letter-spacing: 0px;
+  color: var(--ink);
+  text-align: center;
+  padding: 6px;
+  user-select: none;
+  overflow: hidden;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.tile:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 7px 7px 0 var(--ink);
+}
+
+.tile.selected {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 4px 4px 0 var(--yellow);
+  transform: translate(-2px, -2px);
+}
+
+.tile.wrong {
+  animation: shake .4s ease;
+  background: var(--red);
+  color: var(--white);
+}
+
+@keyframes shake {
+  0%,100% { transform: translateX(0); }
+  20%      { transform: translateX(-6px); }
+  40%      { transform: translateX(6px); }
+  60%      { transform: translateX(-4px); }
+  80%      { transform: translateX(4px); }
+}
+
+.footer {
+  width: min(700px, 95vw);
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+}
+
+.mistakes-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mistakes-label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+
+.mistakes-dots { display: flex; gap: 8px; }
+
+.m-dot {
+  width: 16px; height: 16px;
+  border-radius: 50%;
+  background: var(--ink);
+  border: 2px solid var(--ink);
+  transition: background .3s ease, transform .3s ease;
+}
+
+.m-dot.gone {
+  background: transparent;
+  transform: scale(.7);
+}
+
+.btn-row {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.btn {
+  border: var(--border);
+  background: var(--accent);
+  color: var(--ink);
+  font-family: 'Space Mono', monospace;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 12px 26px;
+  cursor: pointer;
+  box-shadow: var(--shadow);
+  transition: transform .12s ease, box-shadow .12s ease;
+  text-transform: uppercase;
+  
+}
+
+.btn:hover {
+  transform: translate(-3px, -3px);
+  box-shadow: 9px 9px 0 var(--ink);
+}
+
+.btn:active {
+  transform: translate(0,0);
+  box-shadow: 2px 2px 0 var(--ink);
+}
+
+.btn.submit {
+  background: var(--ink);
+  color: var(--paper);
+  box-shadow: 6px 6px 0 var(--yellow);
+}
+
+.btn.submit:hover {
+  box-shadow: 10px 10px 0 var(--yellow);
+}
+
+.btn:disabled {
+  opacity: .45;
+  cursor: not-allowed;
+  transform: none !important;
+  box-shadow: var(--shadow) !important;
+}
+
+.chapter-btn {
+  background: var(--accent);
+  padding: 8px 14px;
+  font-size: 10px;
+}
+
+.chapter-btn.active {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+#chapter-nav {
+  margin-top: 18px !important;
+  margin-bottom: -6px !important;
+  position: relative;
+  z-index: 10;
+}
+
+.toast {
+  position: fixed;
+  bottom: 24px; right: 24px;
+  background: var(--accent);
+  color: var(--ink);
+  border: var(--border);
+  box-shadow: var(--shadow);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  padding: 14px 22px;
+  animation: slideIn .3s ease;
+  z-index: 999;
+}
+
+@keyframes slideIn {
+  from { transform: translateX(300px); opacity: 0; }
+  to   { transform: translateX(0); opacity: 1; }
+}
+
+.one-away {
+  background: var(--yellow);
+  border: var(--border);
+  padding: 10px 24px;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-transform: uppercase;
+  text-align: center;
+  animation: popIn .3s cubic-bezier(.34,1.56,.64,1);
+}
+
+@keyframes popIn {
+  from { transform: scale(.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(33,63,149,0.55);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  animation: fadeIn .25s ease;
+}
+@keyframes fadeIn {
+  from { opacity: 0; } to { opacity: 1; }
+}
+.modal {
+  background: var(--white);
+  border: var(--border);
+  box-shadow: var(--shadow-lg);
+  padding: 36px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 18px;
+  min-width: 280px;
+  animation: popIn .35s cubic-bezier(.34,1.56,.64,1);
+}
+.modal-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 32px;
+  letter-spacing: 4px;
+  color: var(--ink);
+}
+.modal-time {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 3px;
+  color: var(--ink);
+  text-transform: uppercase;
+}
+.modal-time span {
+  font-size: 28px;
+  font-family: 'Bebas Neue', sans-serif;
+  letter-spacing: 4px;
+  display: block;
+  text-align: center;
+}
+.modal-btn-row {
+  display: flex;
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.modal-subtitle {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--ink);
+  text-transform: uppercase;
+  text-align: center;
+  opacity: 0.7;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="game-title"><img src="SVG/KanaYoriTango.svg" alt="Kana Yori Tango"></div>
+  <div class="subtitle">Group 16 scrambled words into four secret themes</div>
+  <div id="chapter-nav" style="margin-top: 12px; display: flex; gap: 8px; flex-wrap: wrap; justify-content: center;"></div>
+</div>
+
+<div class="game-card">
+  <div class="header-bar">
+    <div class="stoplight">
+      <div class="dot r"></div>
+      <div class="dot y"></div>
+      <div class="dot g"></div>
+    </div>
+    <span id="puzzle-num" class="win-title"></span>
+    <span id="timer" class="win-title">00:00</span>
+  </div>
+  <div class="solved-rows" id="solved-rows"></div>
+  <div class="grid-area" id="grid"></div>
+</div>
+
+<div class="footer">
+  <div id="one-away-banner" style="display:none"></div>
+  <div class="mistakes-row">
+    <div class="mistakes-label">Mistakes Remaining:</div>
+    <div class="mistakes-dots" id="mistakes-dots"></div>
+  </div>
+  <div class="btn-row">
+    <button class="btn" onclick="shuffle()">Shuffle</button>
+    <button class="btn" onclick="deselectAll()">Deselect All</button>
+    <button class="btn submit" id="submit-btn" onclick="submitGuess()">Submit</button>
+    <button class="btn" id="next-btn" onclick="nextPuzzle()" style="display:none;">Next</button>
+  </div>
+</div>
+
+<script>
+let ALL_PUZZLES = [];
+let CHAPTERS = [];
+let currentChapter = 0;
+let currentChapterPuzzles = [];
+
+fetch('genki_connections.json')
+  .then(r => r.json())
+  .then(data => {
+    CHAPTERS = Object.entries(data).map(([key, val], idx) => ({
+      name: key,
+      title: 'Chapter ' + (idx + 1),
+      puzzles: val.puzzles
+    }));
+    currentChapter = 0;
+    loadChapter(0);
+    init();
+  })
+  .catch(e => console.error('Failed to load puzzles:', e));
+
+function loadChapter(chapterIdx) {
+  if (chapterIdx < 0 || chapterIdx >= CHAPTERS.length) return;
+  currentChapter = chapterIdx;
+  currentChapterPuzzles = CHAPTERS[chapterIdx].puzzles;
+  localStorage.setItem('connections_chapter', chapterIdx);
+  updateChapterButtons();
+  
+  const savedPuzzleIdx = parseInt(localStorage.getItem(`connections_chapter_${chapterIdx}_puzzle`) || '0');
+  const puzzleIdx = (savedPuzzleIdx >= 0 && savedPuzzleIdx < currentChapterPuzzles.length) ? savedPuzzleIdx : 0;
+  loadPuzzle(puzzleIdx);
+}
+
+function updateChapterButtons() {
+  const nav = document.getElementById('chapter-nav');
+  nav.innerHTML = '';
+  CHAPTERS.forEach((ch, idx) => {
+    const btn = document.createElement('button');
+    btn.className = 'btn chapter-btn' + (idx === currentChapter ? ' active' : '');
+    btn.textContent = ch.title;
+    btn.onclick = () => loadChapter(idx);
+    nav.appendChild(btn);
+  });
+}
+
+let GROUPS = [];
+let tiles = [];
+let selected = [];
+let mistakes = 4;
+let solvedGroups = [];
+let currentPuzzleIndex = 0;
+
+function loadPuzzle(index) {
+  const puzzle = currentChapterPuzzles[index];
+  if (!puzzle) return;
+  currentPuzzleIndex = index;
+  localStorage.setItem(`connections_chapter_${currentChapter}_puzzle`, index);
+
+  GROUPS = puzzle.groups;
+  tiles = GROUPS.flatMap(g => g.words.map(w => ({ word: w, group: g.label })));
+  selected = [];
+  mistakes = 4;
+  solvedGroups = [];
+
+  document.getElementById('solved-rows').innerHTML = '';
+  document.getElementById('next-btn').style.display = 'none';
+  document.getElementById('submit-btn').style.display = '';
+  document.getElementById('puzzle-num').textContent = 'PUZZLE ' + (index + 1) + ' / ' + currentChapterPuzzles.length;
+  hideOneAway();
+  shuffleArray(tiles);
+  renderDots();
+  renderGrid();
+  startTimer();
+}
+
+function advancePuzzle() {
+  stopTimer();
+  const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+  const s = String(timerSeconds % 60).padStart(2, '0');
+  document.getElementById('modal-time-display').textContent = m + ':' + s;
+  const nextBtn = document.getElementById('modal-next-btn');
+  if (currentPuzzleIndex + 1 >= currentChapterPuzzles.length) {
+    if (currentChapter + 1 >= CHAPTERS.length) {
+      nextBtn.textContent = 'All Done!';
+      nextBtn.onclick = function() { document.getElementById('complete-modal').style.display = 'none'; };
+    } else {
+      nextBtn.textContent = 'Next Chapter';
+      nextBtn.onclick = () => { 
+        document.getElementById('complete-modal').style.display = 'none';
+        loadChapter(currentChapter + 1);
+      };
+    }
+  } else {
+    nextBtn.textContent = 'Next Puzzle';
+    nextBtn.onclick = nextPuzzle;
+  }
+  setTimeout(() => { document.getElementById('complete-modal').style.display = 'flex'; }, 500);
+}
+
+function nextPuzzle() {
+  document.getElementById('complete-modal').style.display = 'none';
+  if (currentPuzzleIndex + 1 >= currentChapterPuzzles.length) {
+    if (currentChapter + 1 < CHAPTERS.length) {
+      loadChapter(currentChapter + 1);
+    }
+  } else {
+    loadPuzzle(currentPuzzleIndex + 1);
+  }
+}
+
+function init() {
+  const savedChapter = parseInt(localStorage.getItem('connections_chapter') || '0');
+  if (savedChapter >= 0 && savedChapter < CHAPTERS.length) {
+    loadChapter(savedChapter);
+  }
+}
+
+function shuffleArray(arr) {
+  for (let i = arr.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [arr[i], arr[j]] = [arr[j], arr[i]];
+  }
+}
+
+
+let timerInterval = null;
+let timerSeconds = 0;
+
+function startTimer() {
+  stopTimer();
+  timerSeconds = 0;
+  updateTimerDisplay();
+  timerInterval = setInterval(() => {
+    timerSeconds++;
+    updateTimerDisplay();
+  }, 1000);
+}
+
+function stopTimer() {
+  clearInterval(timerInterval);
+  timerInterval = null;
+}
+
+function updateTimerDisplay() {
+  const m = String(Math.floor(timerSeconds / 60)).padStart(2, '0');
+  const s = String(timerSeconds % 60).padStart(2, '0');
+  document.getElementById('timer').textContent = m + ':' + s;
+}
+
+
+function fitTiles() {
+  const tilEls = document.querySelectorAll('.tile');
+  tilEls.forEach(tile => {
+    tile.style.fontSize = '14px';
+  });
+  requestAnimationFrame(() => requestAnimationFrame(() => {
+    tilEls.forEach(tile => {
+      let lo = 10, hi = 42, best = 14;
+      while (lo <= hi) {
+        const mid = (lo + hi) / 2;
+        tile.style.fontSize = mid + 'px';
+        if (tile.scrollWidth <= tile.clientWidth) {
+          best = mid;
+          lo = mid + 0.5;
+        } else {
+          hi = mid - 0.5;
+        }
+      }
+      tile.style.fontSize = best + 'px';
+    });
+  }));
+}
+
+function renderGrid() {
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+  tiles.forEach(t => {
+    const el = document.createElement('div');
+    el.className = 'tile' + (selected.includes(t.word) ? ' selected' : '');
+    el.textContent = t.word;
+    el.dataset.word = t.word;
+    el.addEventListener('click', () => toggleTile(t.word, el));
+    grid.appendChild(el);
+  });
+  updateSubmitBtn();
+  fitTiles();
+}
+
+function renderDots() {
+  const dots = document.getElementById('mistakes-dots');
+  dots.innerHTML = '';
+  for (let i = 0; i < 4; i++) {
+    const d = document.createElement('div');
+    d.className = 'm-dot' + (i >= mistakes ? ' gone' : '');
+    dots.appendChild(d);
+  }
+}
+
+function toggleTile(word, el) {
+  if (selected.includes(word)) {
+    selected = selected.filter(w => w !== word);
+    el.classList.remove('selected');
+  } else {
+    if (selected.length >= 4) return;
+    selected.push(word);
+    el.classList.add('selected');
+  }
+  hideOneAway();
+  updateSubmitBtn();
+}
+
+function deselectAll() {
+  selected = [];
+  hideOneAway();
+  renderGrid();
+}
+
+function shuffle() {
+  shuffleArray(tiles);
+  selected = [];
+  hideOneAway();
+  renderGrid();
+}
+
+function updateSubmitBtn() {
+  document.getElementById('submit-btn').disabled = selected.length !== 4;
+}
+
+function submitGuess() {
+  if (selected.length !== 4) return;
+
+  const match = GROUPS.find(g =>
+    !solvedGroups.includes(g.label) &&
+    g.words.every(w => selected.includes(w)) &&
+    selected.every(w => g.words.includes(w))
+  );
+
+  if (match) {
+    solvedGroups.push(match.label);
+    tiles = tiles.filter(t => !selected.includes(t.word));
+    selected = [];
+    hideOneAway();
+    renderSolvedRow(match);
+    renderGrid();
+
+    if (solvedGroups.length === 4) {
+      advancePuzzle();
+    }
+  } else {
+    const oneAway = GROUPS.some(g => {
+      if (solvedGroups.includes(g.label)) return false;
+      const overlap = g.words.filter(w => selected.includes(w)).length;
+      return overlap === 3;
+    });
+
+    document.querySelectorAll('.tile.selected').forEach(el => {
+      el.classList.add('wrong');
+      setTimeout(() => el.classList.remove('wrong'), 500);
+    });
+
+    mistakes--;
+    renderDots();
+
+    if (oneAway) showOneAway();
+
+    if (mistakes === 0) {
+      setTimeout(() => revealAll(), 600);
+    }
+  }
+}
+
+function renderSolvedRow(group) {
+  const rows = document.getElementById('solved-rows');
+  const row = document.createElement('div');
+  row.className = `solved-row ${group.color}`;
+  row.innerHTML = `
+    <div class="solved-label">${group.label}</div>
+    <div class="solved-words">${group.words.join(' · ')}</div>
+  `;
+  rows.appendChild(row);
+}
+
+function revealAll() {
+  stopTimer();
+  document.getElementById('fail-modal').style.display = 'flex';
+}
+
+function restartPuzzle() {
+  document.getElementById('fail-modal').style.display = 'none';
+  loadPuzzle(currentPuzzleIndex);
+}
+
+function seeAnswers() {
+  document.getElementById('fail-modal').style.display = 'none';
+  const unsolved = GROUPS.filter(g => !solvedGroups.includes(g.label));
+  unsolved.forEach(g => {
+    solvedGroups.push(g.label);
+    renderSolvedRow(g);
+  });
+  tiles = [];
+  selected = [];
+  renderGrid();
+  document.getElementById('next-btn').style.display = '';
+  document.getElementById('submit-btn').style.display = 'none';
+}
+
+function showOneAway() {
+  const b = document.getElementById('one-away-banner');
+  b.className = 'one-away';
+  b.textContent = 'ONE AWAY...';
+  b.style.display = 'block';
+}
+
+function hideOneAway() {
+  document.getElementById('one-away-banner').style.display = 'none';
+}
+
+function toast(msg) {
+  const t = document.createElement('div');
+  t.className = 'toast';
+  t.textContent = msg;
+  document.body.appendChild(t);
+  setTimeout(() => t.remove(), 2200);
+}
+
+</script>
+
+<div class="modal-overlay" id="fail-modal" style="display:none;">
+  <div class="modal">
+    <div class="modal-title">OUT OF TRIES</div>
+    <div class="modal-subtitle">Better luck next time!</div>
+    <div class="modal-btn-row">
+      <button class="btn" onclick="restartPuzzle()">Try Again</button>
+      <button class="btn submit" onclick="seeAnswers()">See Answers</button>
+    </div>
+  </div>
+</div>
+
+<div class="modal-overlay" id="complete-modal" style="display:none;">
+  <div class="modal">
+    <div class="modal-title">PUZZLE COMPLETE</div>
+    <div class="modal-time">Your time<span id="modal-time-display">00:00</span></div>
+    <div class="modal-btn-row">
+      <button class="btn submit" id="modal-next-btn" onclick="nextPuzzle()">Next Puzzle</button>
+    </div>
+  </div>
+</div>
+</body>
+</html>
